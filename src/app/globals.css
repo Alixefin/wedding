@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    --background: 120 60% 96%; /* #F0FAF0 Very Light Green */
-    --foreground: 120 30% 25%; /* Dark Green text #334d33 */
+    --background: 30 100% 98%; /* Very Light Peachy White */
+    --foreground: 20 20% 30%; /* Dark Warm Gray */
 
-    --card: 120 50% 99%; /* Almost white with very light green tint */
-    --card-foreground: 120 30% 25%; /* Dark Green text */
+    --card: 30 80% 99%; /* Almost white with subtle peach tint */
+    --card-foreground: 20 20% 30%; /* Dark Warm Gray */
 
-    --popover: 120 50% 99%;
-    --popover-foreground: 120 30% 25%;
+    --popover: 30 80% 99%;
+    --popover-foreground: 20 20% 30%;
 
-    --primary: 36 67% 72%; /* Pale Gold #E6BE8A */
-    --primary-foreground: 36 60% 20%; /* Dark Brown for text on Pale Gold */
+    --primary: 35 90% 65%; /* Warm Gold/Apricot */
+    --primary-foreground: 35 50% 20%; /* Dark Brown for text on primary */
 
-    --secondary: 127 33% 85%; /* Lighter Soft Green */
-    --secondary-foreground: 127 30% 30%; /* Darker Green for text on secondary */
+    --secondary: 200 60% 80%; /* Soft Sky Blue */
+    --secondary-foreground: 200 40% 30%; /* Darker Blue for text */
 
-    --muted: 120 30% 90%; /* Muted very light green */
-    --muted-foreground: 120 25% 50%; /* Muted green text */
+    --muted: 30 50% 94%; /* Light Peach Gray */
+    --muted-foreground: 30 30% 55%; /* Medium Peach Gray */
 
-    --accent: 127 33% 71%; /* Soft Green #A7D1AB */
-    --accent-foreground: 127 30% 20%; /* Dark Green text on Soft Green */
+    --accent: 0 80% 75%; /* Soft Coral */
+    --accent-foreground: 0 50% 30%; /* Darker Coral for text */
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 127 25% 85%; /* Pale Green border */
-    --input: 120 30% 94%;
-    --ring: 36 60% 65%; /* Ring color based on Pale Gold */
+    --border: 30 50% 90%; /* Very Light Peach border */
+    --input: 30 50% 96%;
+    --ring: 35 80% 60%; /* Gold for ring focus */
     
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
@@ -39,45 +39,45 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
 
-    /* Sidebar variables - can keep defaults or align if sidebar is used */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar variables */
+    --sidebar-background: 30 100% 97%;
+    --sidebar-foreground: 20 20% 35%;
+    --sidebar-primary: 35 90% 60%;
+    --sidebar-primary-foreground: 35 50% 15%;
+    --sidebar-accent: 0 80% 70%;
+    --sidebar-accent-foreground: 0 50% 25%;
+    --sidebar-border: 30 50% 88%;
+    --sidebar-ring: 35 80% 55%;
   }
 
   .dark {
-    --background: 120 10% 10%; 
-    --foreground: 120 25% 90%; 
+    --background: 20 15% 10%; /* Very Dark Warm Gray */
+    --foreground: 30 60% 92%; /* Light Peachy White text */
 
-    --card: 120 10% 15%; 
-    --card-foreground: 120 25% 90%;
+    --card: 20 15% 13%; /* Darker Warm Gray card */
+    --card-foreground: 30 60% 92%;
 
-    --popover: 120 10% 15%;
-    --popover-foreground: 120 25% 90%;
+    --popover: 20 15% 13%;
+    --popover-foreground: 30 60% 92%;
 
-    --primary: 36 50% 60%; /* Muted Gold */
-    --primary-foreground: 36 80% 95%; 
+    --primary: 35 75% 60%; /* Muted Gold/Apricot for dark mode */
+    --primary-foreground: 35 30% 95%; /* Very light text on primary */
 
-    --secondary: 127 20% 30%; 
-    --secondary-foreground: 127 30% 80%; 
+    --secondary: 200 40% 35%; /* Darker Sky Blue */
+    --secondary-foreground: 200 60% 85%; /* Lighter Blue text */
 
-    --muted: 120 10% 20%;
-    --muted-foreground: 120 15% 55%;
+    --muted: 20 15% 20%; /* Dark Warm Gray muted */
+    --muted-foreground: 30 30% 60%; /* Medium Light Peach Gray */
 
-    --accent: 127 30% 50%; /* Mid Soft Green */
-    --accent-foreground: 127 40% 90%;
+    --accent: 0 65% 65%; /* Muted Coral for dark mode */
+    --accent-foreground: 0 40% 90%; /* Light Coral text */
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 60% 45%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 120 10% 25%;
-    --input: 120 10% 22%;
-    --ring: 36 50% 55%;
+    --border: 20 10% 22%; /* Dark Warm Gray border */
+    --input: 20 10% 18%;
+    --ring: 35 70% 55%; /* Gold for ring focus */
     
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
@@ -85,15 +85,15 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
 
-    /* Dark Sidebar variables - can keep defaults or align if sidebar is used */
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Dark Sidebar variables */
+    --sidebar-background: 20 15% 12%;
+    --sidebar-foreground: 30 60% 90%;
+    --sidebar-primary: 35 75% 55%;
+    --sidebar-primary-foreground: 35 30% 92%;
+    --sidebar-accent: 0 65% 60%;
+    --sidebar-accent-foreground: 0 40% 88%;
+    --sidebar-border: 20 10% 20%;
+    --sidebar-ring: 35 70% 50%;
   }
 }
 
