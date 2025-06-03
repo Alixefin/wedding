@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Heart, MapPin, Clock } from "lucide-react";
+import { Heart, MapPin, Clock, CalendarDays } from "lucide-react";
 
 export default function HomePage() {
   const weddingDate = "26th July, 2025";
@@ -33,27 +33,40 @@ export default function HomePage() {
             <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-accent mx-4" fill="currentColor" />
             <div className="flex-grow border-t border-accent/30"></div>
           </div>
-
-          <p className="font-body text-2xl sm:text-3xl text-accent tracking-wide">
-            {weddingDate}
-          </p>
         </section>
 
-        <section id="event-details" className="animate-slideUp animation-delay-200">
-          <div className="space-y-6 bg-card/50 p-6 sm:p-8 rounded-xl shadow-lg border border-primary/20 text-left">
-            <div>
+        <section id="event-details" className="space-y-8">
+          <div className="bg-primary/10 p-6 rounded-xl shadow-lg border border-primary/30 text-center animate-slideUp animation-delay-200">
+            <CalendarDays className="w-10 h-10 sm:w-12 sm:h-12 text-primary mx-auto mb-3 sm:mb-4" />
+            <p className="font-headline text-3xl sm:text-4xl text-primary font-semibold">
+              {weddingDate}
+            </p>
+          </div>
+
+          <div className="space-y-6 bg-card/50 p-6 sm:p-8 rounded-xl shadow-lg border border-primary/20 text-left animate-slideUp animation-delay-400">
+            <div className="space-y-4">
               <h3 className="font-headline text-xl sm:text-2xl text-accent mb-2 text-center sm:text-left">Ceremony & Reception</h3>
-              <p className="font-body text-lg sm:text-xl text-foreground font-semibold">
-                {venueName}
-              </p>
-              <p className="font-body text-base sm:text-lg text-muted-foreground">
-                {venueAddress}
-              </p>
-              <p className="font-body text-base sm:text-lg text-foreground mt-3 flex items-center">
+              
+              <div>
+                <p className="font-body text-lg sm:text-xl text-foreground font-semibold">
+                  {venueName}
+                </p>
+                <div className="flex items-start mt-1">
+                  <MapPin className="mr-2 h-5 w-5 text-accent mt-1 shrink-0" />
+                  <p className="font-body text-base sm:text-lg text-muted-foreground">
+                    {venueAddress}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center">
                 <Clock className="mr-2 h-5 w-5 text-accent" />
-                {eventTime}
-              </p>
+                <p className="font-body text-base sm:text-lg text-foreground">
+                  {eventTime}
+                </p>
+              </div>
             </div>
+
             <div className="pt-4 sm:pt-6 text-center">
               <Button asChild size="lg" className="font-body text-base sm:text-lg rounded-full px-8 py-3 shadow-md hover:shadow-lg transition-shadow">
                 <a href={googleMapsLink} target="_blank" rel="noopener noreferrer">
