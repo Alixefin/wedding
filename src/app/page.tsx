@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Heart, MapPin } from "lucide-react";
 
 export default function HomePage() {
-  const coupleFullName = "Chidiogo Pamela Duru & Emmanuel Ejiro Ukuta (Placid)";
   const weddingDate = "26th July, 2025";
   const venueName = "A CLASS HALL";
   const venueAddress = "Along Kashim Ibrahim Way, Maitama, Abuja";
@@ -17,15 +16,15 @@ export default function HomePage() {
           <h2 className="font-body text-base sm:text-lg text-accent mb-4 tracking-wider uppercase">
             Together with their families
           </h2>
-          <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl text-primary mb-3">
+          <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl text-primary mb-3 uppercase font-bold">
             Chidiogo Pamela Duru
           </h1>
           <div className="font-headline text-3xl sm:text-4xl md:text-5xl text-primary mb-3">
             &
           </div>
-          <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl text-primary mb-8">
+          <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl text-primary mb-8 uppercase font-bold">
             Emmanuel Ejiro Ukuta 
-            <span className="block sm:inline text-2xl sm:text-3xl md:text-4xl font-body text-primary/80"> (Placid)</span>
+            <span className="block sm:inline text-2xl sm:text-3xl md:text-4xl font-body text-primary/80 normal-case font-normal"> (Placid)</span>
           </h1>
           
           <div className="flex justify-center items-center my-8 sm:my-10">
@@ -59,15 +58,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
-        <footer className="pt-8 sm:pt-10 animate-slideUp animation-delay-400">
-            <p className="font-body text-sm sm:text-base text-muted-foreground">
-                #ChidiOGO&EMMAplacidinLOVE2025
-            </p>
-             <p className="font-body text-xs text-muted-foreground/70 mt-2">
-                {coupleFullName} | {weddingDate}
-            </p>
-        </footer>
       </div>
     </main>
   );
