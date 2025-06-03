@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Heart, MapPin } from "lucide-react";
 
@@ -33,16 +34,12 @@ export default function HomePage() {
             <div className="flex-grow border-t border-accent/30"></div>
           </div>
 
-          <p className="font-headline text-xl sm:text-2xl md:text-3xl text-foreground mb-3">
-            Joyfully invite you to celebrate their wedding
-          </p>
           <p className="font-body text-2xl sm:text-3xl text-accent tracking-wide">
             26<sup>th</sup> July, 2025
           </p>
         </section>
 
         <section id="event-details" className="animate-slideUp animation-delay-200">
-          <h2 className="font-headline text-3xl sm:text-4xl text-primary mb-6 sm:mb-8">The Celebration</h2>
           <div className="space-y-6 bg-card/50 p-6 sm:p-8 rounded-xl shadow-lg border border-primary/20">
             <div>
               <h3 className="font-headline text-xl sm:text-2xl text-accent mb-1">Ceremony & Reception</h3>
