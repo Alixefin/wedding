@@ -4,96 +4,96 @@
 
 @layer base {
   :root {
-    --background: 45 60% 98%; /* Very Light Goldish White */
-    --foreground: 140 25% 20%; /* Dark Greenish Gray */
+    --background: 220 50% 98%; /* Very Light Blueish White */
+    --foreground: 220 25% 20%; /* Dark Navy/Grey */
 
-    --card: 45 50% 99%; /* Almost white with subtle gold tint */
-    --card-foreground: 140 25% 20%; /* Dark Greenish Gray */
+    --card: 220 50% 99%; /* Almost white with a hint of blue */
+    --card-foreground: 220 25% 20%;
 
-    --popover: 45 50% 99%;
-    --popover-foreground: 140 25% 20%;
+    --popover: 220 50% 99%;
+    --popover-foreground: 220 25% 20%;
 
-    --primary: 40 90% 55%; /* Vibrant Gold */
-    --primary-foreground: 40 50% 15%; /* Dark Brown for text on gold */
+    --primary: 220 60% 45%; /* Navy Blue */
+    --primary-foreground: 220 20% 95%; /* Light color for text on primary */
 
-    --secondary: 130 30% 75%; /* Soft Mint Green */
-    --secondary-foreground: 130 50% 25%; /* Darker Green for text */
+    --secondary: 220 40% 75%; /* Soft, lighter blue */
+    --secondary-foreground: 220 25% 25%; /* Darker blue for text on secondary */
 
-    --muted: 45 40% 94%; /* Light Goldish Gray */
-    --muted-foreground: 45 25% 55%; /* Medium Goldish Gray */
+    --muted: 220 40% 94%; /* Light grayish blue */
+    --muted-foreground: 220 25% 55%; /* Medium grayish blue */
 
-    --accent: 130 60% 40%; /* Deep Emerald Green */
-    --accent-foreground: 130 30% 95%; /* Light Mint for text on green */
+    --accent: 340 90% 80%; /* Baby Pink */
+    --accent-foreground: 340 60% 30%; /* Darker pink/burgundy for text on accent */
 
     --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 45 40% 90%; /* Very Light Goldish border */
-    --input: 45 40% 96%;
-    --ring: 40 80% 50%; /* Gold for ring focus */
+    --border: 220 40% 90%; /* Light blueish border */
+    --input: 220 40% 96%;
+    --ring: 220 60% 50%; /* Navy Blue for ring focus */
     
-    --chart-1: 40 80% 60%;
-    --chart-2: 130 50% 50%;
-    --chart-3: 45 70% 70%;
-    --chart-4: 135 40% 60%;
-    --chart-5: 35 75% 65%;
+    --chart-1: 220 70% 55%;
+    --chart-2: 340 80% 75%;
+    --chart-3: 210 60% 65%;
+    --chart-4: 330 70% 70%;
+    --chart-5: 200 75% 60%;
     --radius: 0.5rem;
 
     /* Sidebar variables */
-    --sidebar-background: 45 60% 97%;
-    --sidebar-foreground: 140 25% 25%;
-    --sidebar-primary: 40 90% 50%;
-    --sidebar-primary-foreground: 40 50% 10%;
-    --sidebar-accent: 130 60% 35%;
-    --sidebar-accent-foreground: 130 30% 92%;
-    --sidebar-border: 45 40% 88%;
-    --sidebar-ring: 40 80% 45%;
+    --sidebar-background: 220 50% 97%;
+    --sidebar-foreground: 220 25% 25%;
+    --sidebar-primary: 220 60% 40%;
+    --sidebar-primary-foreground: 220 20% 92%;
+    --sidebar-accent: 340 90% 75%;
+    --sidebar-accent-foreground: 340 60% 25%;
+    --sidebar-border: 220 40% 88%;
+    --sidebar-ring: 220 60% 45%;
   }
 
   .dark {
-    --background: 140 10% 10%; /* Very Dark Greenish Gray */
-    --foreground: 45 40% 92%; /* Light Goldish White text */
+    --background: 220 15% 10%; /* Very Dark Navy */
+    --foreground: 220 30% 92%; /* Light blueish white text */
 
-    --card: 140 10% 13%; /* Darker Greenish Gray card */
-    --card-foreground: 45 40% 92%;
+    --card: 220 15% 13%; /* Darker Navy card */
+    --card-foreground: 220 30% 92%;
 
-    --popover: 140 10% 13%;
-    --popover-foreground: 45 40% 92%;
+    --popover: 220 15% 13%;
+    --popover-foreground: 220 30% 92%;
 
-    --primary: 40 80% 60%; /* Rich Gold for dark mode */
-    --primary-foreground: 40 30% 15%; /* Dark bronze/brown on gold */
+    --primary: 220 70% 60%; /* Brighter Navy Blue for dark mode */
+    --primary-foreground: 220 25% 15%; /* Dark color on primary */
 
-    --secondary: 130 30% 30%; /* Darker Mint Green */
-    --secondary-foreground: 130 50% 80%; /* Lighter Green text */
+    --secondary: 220 30% 30%; /* Darker, muted blue */
+    --secondary-foreground: 220 50% 80%; /* Lighter blue text */
 
-    --muted: 140 10% 20%; /* Dark Greenish Gray muted */
-    --muted-foreground: 45 25% 60%; /* Medium Light Goldish Gray */
+    --muted: 220 15% 20%; /* Dark grayish blue muted */
+    --muted-foreground: 220 25% 60%; /* Medium Light grayish blue */
 
-    --accent: 130 55% 50%; /* Emerald Green for dark mode */
-    --accent-foreground: 130 30% 90%; /* Light Mint on green */
+    --accent: 340 70% 70%; /* Baby Pink, slightly more saturated for dark mode */
+    --accent-foreground: 340 30% 90%; /* Very light pink/white text on accent */
 
     --destructive: 0 60% 45%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 140 5% 22%; /* Dark Greenish Gray border */
-    --input: 140 5% 18%;
-    --ring: 40 70% 55%; /* Gold for ring focus */
+    --border: 220 10% 22%; /* Dark blueish border */
+    --input: 220 10% 18%;
+    --ring: 220 70% 55%; /* Brighter Navy Blue for ring focus */
     
-    --chart-1: 40 70% 55%;
-    --chart-2: 130 45% 45%;
-    --chart-3: 45 60% 65%;
-    --chart-4: 135 35% 55%;
-    --chart-5: 35 65% 60%;
+    --chart-1: 220 60% 50%;
+    --chart-2: 340 60% 65%;
+    --chart-3: 210 50% 55%;
+    --chart-4: 330 60% 60%;
+    --chart-5: 200 65% 50%;
 
     /* Dark Sidebar variables */
-    --sidebar-background: 140 10% 12%;
-    --sidebar-foreground: 45 40% 90%;
-    --sidebar-primary: 40 80% 55%;
-    --sidebar-primary-foreground: 40 30% 12%;
-    --sidebar-accent: 130 55% 45%;
-    --sidebar-accent-foreground: 130 30% 88%;
-    --sidebar-border: 140 5% 20%;
-    --sidebar-ring: 40 70% 50%;
+    --sidebar-background: 220 15% 12%;
+    --sidebar-foreground: 220 30% 90%;
+    --sidebar-primary: 220 70% 55%;
+    --sidebar-primary-foreground: 220 25% 12%;
+    --sidebar-accent: 340 70% 65%;
+    --sidebar-accent-foreground: 340 30% 88%;
+    --sidebar-border: 220 10% 20%;
+    --sidebar-ring: 220 70% 50%;
   }
 }
 

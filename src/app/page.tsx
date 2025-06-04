@@ -85,7 +85,7 @@ export default function HomePage() {
 
   useEffect(() => {
     if (!targetEventDate || timeLeft.isPast) {
-      setTimeLeft(calculateTimeLeft(targetEventDate)); // Ensure state is correct if event passed or date invalid
+      setTimeLeft(calculateTimeLeft(targetEventDate)); 
       return;
     }
 
@@ -181,6 +181,11 @@ export default function HomePage() {
                   {eventTime}
                 </p>
               </div>
+              <div className="mt-4 pt-4 border-t border-border">
+                <p className="text-sm text-muted-foreground">
+                  <span className="font-semibold text-foreground">COLOUR CODE:</span> NAVY BLUE, DARK SEA GREEN, BABY PINK, WHITE
+                </p>
+              </div>
             </div>
 
             <div className="pt-4 sm:pt-6 text-center">
@@ -196,4 +201,3 @@ export default function HomePage() {
     </main>
   );
 }
-
