@@ -1,6 +1,39 @@
 
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Heart, MapPin, Clock, CalendarDays } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+
+const calculateTimeLeft = (targetDate: Date | null): {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+  isPast: boolean;
+  isValid: boolean;
+} => {
+  if (!targetDate || isNaN(targetDate.getTime())) {
+    return { days: 0, hours: 0, minutes: 0, seconds: 0, isPast: true, isValid: false };
+  }
+
+  const difference = +targetDate - +new Date();
+  let timeLeftData: { days: number; hours: number; minutes: number; seconds: number; isPast: boolean; isValid: boolean };
+
+  if (difference > 0) {
+    timeLeftData = {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / 1000 / 60) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+      isPast: false,
+      isValid: true,
+    };
+  } else {
+    timeLeftData = { days: 0, hours: 0, minutes: 0, seconds: 0, isPast: true, isValid: true };
+  }
+  return timeLeftData;
+};
 
 export default function HomePage() {
   const weddingDate = "26th July, 2025";
@@ -8,6 +41,67 @@ export default function HomePage() {
   const venueAddress = "Along Kashim Ibrahim Way, Maitama, Abuja";
   const googleMapsLink = "https://www.google.com/maps/place/A-Class+Park+And+Recreation/@9.0858892,7.4739817,702m/data=!3m2!1e3!4b1!4m6!3m5!1s0x104e0af4036529bb:0x39d11f0c8ff26a57!8m2!3d9.0858892!4d7.476562!16s%2Fg%2F11bzr7mpqd!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D";
   const eventTime = "1:00 PM";
+
+  const getTargetDateTime = useCallback(() => {
+    const monthNames: { [key: string]: string } = {
+      "January": "01", "February": "02", "March": "03", "April": "04",
+      "May": "05", "June": "06", "July": "07", "August": "08",
+      "September": "09", "October": "10", "November": "11", "December": "12"
+    };
+    const dateRegex = /(\d+)(?:st|nd|rd|th)?\s([A-Za-z]+),\s(\d{4})/;
+    const timeRegex = /(\d+):(\d+)\s(AM|PM)/;
+
+    const dateMatch = weddingDate.match(dateRegex);
+    const timeMatch = eventTime.match(timeRegex);
+
+    if (dateMatch && timeMatch) {
+      const day = dateMatch[1];
+      const monthName = dateMatch[2];
+      const year = dateMatch[3];
+      const month = monthNames[monthName];
+
+      let hours = parseInt(timeMatch[1]);
+      const minutes = timeMatch[2];
+      const ampm = timeMatch[3];
+
+      if (ampm === "PM" && hours < 12) hours += 12;
+      if (ampm === "AM" && hours === 12) hours = 0; // Midnight
+
+      const isoDateString = `${year}-${month}-${String(day).padStart(2, '0')}T${String(hours).padStart(2, '0')}:${minutes}:00`;
+      return new Date(isoDateString);
+    }
+    return null;
+  }, [weddingDate, eventTime]);
+
+  const [targetEventDate, setTargetEventDate] = useState<Date | null>(() => getTargetDateTime());
+  const [timeLeft, setTimeLeft] = useState(() => calculateTimeLeft(targetEventDate));
+
+  useEffect(() => {
+    const newTargetDate = getTargetDateTime();
+    if (newTargetDate?.getTime() !== targetEventDate?.getTime()) {
+        setTargetEventDate(newTargetDate);
+    }
+  }, [getTargetDateTime, targetEventDate]);
+
+  useEffect(() => {
+    if (!targetEventDate || timeLeft.isPast) {
+      setTimeLeft(calculateTimeLeft(targetEventDate)); // Ensure state is correct if event passed or date invalid
+      return;
+    }
+
+    const intervalId = setInterval(() => {
+      setTimeLeft(calculateTimeLeft(targetEventDate));
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, [targetEventDate, timeLeft.isPast]);
+
+  const countdownItems = [
+    { label: 'Days', value: timeLeft.days },
+    { label: 'Hours', value: timeLeft.hours },
+    { label: 'Minutes', value: timeLeft.minutes },
+    { label: 'Seconds', value: timeLeft.seconds },
+  ];
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-background text-foreground p-6 sm:p-12 selection:bg-primary selection:text-primary-foreground">
@@ -33,6 +127,28 @@ export default function HomePage() {
             <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-accent mx-4" fill="currentColor" />
             <div className="flex-grow border-t border-accent/30"></div>
           </div>
+        </section>
+
+        <section id="countdown" className="animate-slideUp animation-delay-600">
+          <h3 className="font-headline text-2xl sm:text-3xl text-accent mb-6 text-center">
+            Counting Down!
+          </h3>
+          {timeLeft.isValid && !timeLeft.isPast ? (
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-center">
+              {countdownItems.map(item => (
+                <div key={item.label} className="bg-primary/10 p-3 sm:p-4 rounded-xl shadow-md border border-primary/20">
+                  <span className="block font-headline text-3xl sm:text-4xl text-primary">
+                    {item.label === 'Days' ? item.value : String(item.value).padStart(2, '0')}
+                  </span>
+                  <span className="block text-xs sm:text-sm text-muted-foreground uppercase tracking-wider">{item.label}</span>
+                </div>
+              ))}
+            </div>
+          ) : timeLeft.isValid && timeLeft.isPast ? (
+            <p className="text-center font-headline text-2xl text-primary py-4">The special day is here!</p>
+          ) : (
+            <p className="text-center text-muted-foreground py-4">Loading countdown...</p>
+          )}
         </section>
 
         <section id="event-details" className="space-y-8">
@@ -80,3 +196,4 @@ export default function HomePage() {
     </main>
   );
 }
+
