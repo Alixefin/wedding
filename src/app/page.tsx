@@ -131,7 +131,7 @@ export default function HomePage() {
 
         <section id="countdown" className="animate-slideUp animation-delay-600">
           <h3 className="font-headline text-2xl sm:text-3xl text-accent mb-6 text-center">
-            Counting Down!
+            Counting Down to Your Big Day
           </h3>
           {timeLeft.isValid && !timeLeft.isPast ? (
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-center">
